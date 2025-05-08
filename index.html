@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+""<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -21,6 +21,11 @@
     <meta name="twitter:description" content="Das ist eine coole Testseite mit Dark Mode und Buttons!">
     <meta name="twitter:image" content="https://primary.jwwb.nl/public/r/q/d/temp-gzcegbeqgjsbnkqcjyhg/img_3439-high.jpg?enable-io=true&enable=upscale&crop=1920%2C1920%2Cx0%2Cy0%2Csafe&width=1180&height=1180">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body, input, button {
+            font-family: 'Kumbh Sans', sans-serif;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
 
@@ -55,23 +60,5 @@
         <button class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Loslegen</button>
     </div>
 
-    <!-- Dark Mode & Buttons -->
-    <div class="mt-8 text-center">
-        <h1>Testseite</h1>
-        <p>Das ist eine eingebettete HTML-Seite in einer lolWebView.</p>
-        <button id="klickButton" class="bg-green-500 text-white p-2 rounded-md hover:bg-green-600">Klick mich!</button>
-        <button onclick="toggleDarkMode()" class="bg-gray-800 text-white p-2 rounded-md hover:bg-gray-700 mt-4">Dark Mode umschalten</button>
-    </div>
-
-    <script>
-        document.getElementById("klickButton").addEventListener("click", () => {
-            alert("Button geklickt!");
-        });
-
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
-        }
-    </script>
-
 </body>
-</html>
+</html>""
