@@ -4,85 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testseite</title>
-<!-- Favicon für Browser und Social Media -->
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <!-- Optional: Für bessere Darstellung auf Apple-Geräten -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
-    <!-- Open Graph Meta Tags für Link-Vorschau -->
     <meta property="og:title" content="GRATIS ROBUX!!! 🤑💸">
     <meta property="og:description" content="Hol dir heute noch deine 10.000 Robux gratis! 💰">
     <meta property="og:image" content="https://primary.jwwb.nl/public/r/q/d/temp-gzcegbeqgjsbnkqcjyhg/img_3443-high.jpg?enable-io=true&enable=upscale&crop=1918%2C878%2Cx0%2Cy0%2Csafe&width=1180&height=540">
-        <meta property="og:image:width" content="1180">
+    <meta property="og:image:width" content="1180">
     <meta property="og:image:height" content="540">
     <meta property="og:url" content="https://robloxsecret.github.io/gratisrobux/">
     <meta property="og:type" content="website">
-
-    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Meine Testseite">
     <meta name="twitter:description" content="Das ist eine coole Testseite mit Dark Mode und Buttons!">
     <meta name="twitter:image" content="https://primary.jwwb.nl/public/r/q/d/temp-gzcegbeqgjsbnkqcjyhg/img_3439-high.jpg?enable-io=true&enable=upscale&crop=1920%2C1920%2Cx0%2Cy0%2Csafe&width=1180&height=1180">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin-top: 20px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            transition: background-color 0.2s;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                margin-top: 20px;
-            }
-
-            button {
-                width: 90%;
-            }
-        }
-
-        .dark-mode {
-            background-color: #333;
-            color: white;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Testseite</h1>
-    <p>Das ist eine eingebetteteeeeeeeeeeeeeeeeeee HTML-Seite in einer lolWebView.</p>
+<body class="bg-gray-100">
 
-    <button id="klickButton">Klick mich!</button>
-    <button onclick="toggleDarkMode()">Dark Mode umschalten</button>
+    <!-- Navigation Bar -->
+    <nav class="bg-white p-4 shadow-md flex justify-between items-center">
+        <div class="space-x-2 cursor-pointer">
+            <div class="w-6 h-0.5 bg-black"></div>
+            <div class="w-6 h-0.5 bg-black"></div>
+            <div class="w-6 h-0.5 bg-black"></div>
+        </div>
+        <div class="flex space-x-6 text-gray-600 text-sm font-medium">
+            <a href="#">Entdecken</a>
+            <a href="#">Marktplatz</a>
+            <a href="#">Shop</a>
+            <a href="#">Impressum</a>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <div class="relative">
+        <img src="https://raw.githubusercontent.com/robux111/1/main/images/bp.jpg" alt="Banner" class="w-full h-64 object-cover">
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+            <h1 class="text-3xl font-bold">Überschrift hier</h1>
+            <p class="text-lg mt-2">Normaler Text hier</p>
+        </div>
+    </div>
+
+    <!-- Main Section -->
+    <div class="mt-8 mx-auto max-w-xl p-6 bg-white shadow-md rounded-lg">
+        <p class="mb-4 text-gray-700">Hier steht ein Text</p>
+        <input type="text" class="w-full p-2 mb-4 border rounded-md" placeholder="Dein Text hier...">
+        <button class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Loslegen</button>
+    </div>
+
+    <!-- Dark Mode & Buttons -->
+    <div class="mt-8 text-center">
+        <h1>Testseite</h1>
+        <p>Das ist eine eingebettete HTML-Seite in einer lolWebView.</p>
+        <button id="klickButton" class="bg-green-500 text-white p-2 rounded-md hover:bg-green-600">Klick mich!</button>
+        <button onclick="toggleDarkMode()" class="bg-gray-800 text-white p-2 rounded-md hover:bg-gray-700 mt-4">Dark Mode umschalten</button>
+    </div>
 
     <script>
-        // Modernes Event-Handling für den Klick-Button
         document.getElementById("klickButton").addEventListener("click", () => {
             alert("Button geklickt!");
         });
 
-        // Dark Mode Umschalter
         function toggleDarkMode() {
             document.body.classList.toggle("dark-mode");
         }
     </script>
+
 </body>
 </html>
