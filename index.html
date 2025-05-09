@@ -26,6 +26,7 @@
             font-family: 'Kumbh Sans', sans-serif;
             font-weight: bold;
         }
+
         .fade-in {
             opacity: 0;
             animation: fadeIn 2s ease-out forwards;
@@ -57,6 +58,15 @@
             .banner-text p {
                 font-size: calc(60% * 1.2); /* Kleinere Schriftgröße für Laptops */
             }
+        }
+
+        /* Anpassungen für den Container */
+        #main-container {
+            min-height: 500px; /* Setzt eine Mindesthöhe für den Container */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Zentriert den Inhalt vertikal */
+            padding: 20px;
         }
     </style>
 </head>
@@ -116,7 +126,7 @@
             document.getElementById('label').style.display = 'none';
             usernameInput.style.display = 'none';
             event.target.style.display = 'none';
-            mainContainer.classList.add("h-96");
+            mainContainer.classList.add("h-[500px]"); // Vergrößert das Rechteck
 
             const tableData = [
                 { left: "0.00€", button: "800", info: "1 Aufgabe", tasks: 1 },
@@ -220,4 +230,3 @@
     </script>
 </body>
 </html>
-
