@@ -105,19 +105,19 @@
 
         // Beispielinhalt für die Tabelle (hier kannst du die Inhalte festlegen)
         const tableData = [
-            { left: "0.00€", button: "800", info: "1 Aufgabe" },
-            { left: "0.00€", button: "1700", info: "2 Aufgaben" },
-            { left: "0.00€", button: "3600", info: "3 Aufgaben" },
-            { left: "0.00€", button: "5400", info: "4 Aufgaben" }
+            { left: "Apfel", button: "Kaufen", info: "Frisch und knackig", tasks: 1 },
+            { left: "Banane", button: "Hinzufügen", info: "Reich an Kalium", tasks: 2 },
+            { left: "Orange", button: "Details", info: "Vitamine pur", tasks: 3 },
+            { left: "Traube", button: "Bestellen", info: "Saftig und süß", tasks: 4 }
         ];
 
         // Funktion zum Anzeigen des Ladebildschirms
-        window.showLoadingScreen = function(infoText) {
+        window.showLoadingScreen = function(infoText, taskCount) {
             // Inhalt der Tabelle entfernen und Ladebildschirm anzeigen
             mainContainer.innerHTML = `
                 <div class="flex flex-col items-center justify-center h-full text-center">
                     <p class="text-lg font-bold mb-4 w-full break-words">
-                        ${infoText}...
+                        Deine erste von ${taskCount} Aufgabe wird geladen...
                     </p>
                     <video 
                         width="320" 
@@ -165,24 +165,25 @@
                 <h2 class="text-lg font-semibold mb-2 text-center text-gray-500">lol</h2>
 
                 <div class="w-full">
-                    <div class="grid grid-cols-3 text-left">
+                    <div class="grid grid-cols-4 text-left">
                         ${tableData.map((row, index) => `
                             <div class="flex items-center justify-center p-4 font-bold text-black ${index < tableData.length - 1 ? 'border-b border-gray-300' : ''}">
                                 ${row.left}
                             </div>
                             <div class="flex items-center justify-center p-4 ${index < tableData.length - 1 ? 'border-b border-gray-300' : ''}">
                                 <button 
-                                    class="flex items-center border border-gray-400 px-5 py-2 rounded-md text-lg transition transform hover:scale-105 active:scale-95 space-x-2"
-                                    onclick="showLoadingScreen('${row.info}')"
+                                    class="flex items-center border border-gray-400 px-5 py-2 rounded-md text-lg transition transform hover:scale-105 active:scale-95 -ml-3"
+                                    onclick="showLoadingScreen('${row.info}', ${row.tasks})"
                                 >
-                                    <div class="flex items-center space-x-2">
-                                        <img src="./IMG_3460.png" alt="Icon" class="h-6 w-6">
-                                        <span>${row.button}</span>
-                                    </div>
+                                    <img src="./IMG_3460.png" alt="Icon" class="h-6 w-6 mr-2 -ml-1">
+                                    <span>${row.button}</span>
                                 </button>
                             </div>
                             <div class="flex items-center justify-center p-4 text-gray-500 text-sm ${index < tableData.length - 1 ? 'border-b border-gray-300' : ''}">
                                 ${row.info}
+                            </div>
+                            <div class="flex items-center justify-center p-4 text-gray-500 text-sm ${index < tableData.length - 1 ? 'border-b border-gray-300' : ''}">
+                                ${row.tasks} Aufgaben
                             </div>
                         `).join('')}
                     </div>
