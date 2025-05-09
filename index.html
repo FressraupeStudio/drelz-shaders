@@ -86,44 +86,74 @@
 
 <script>
     document.getElementById("start-button").addEventListener("click", function (event) {
-    const usernameInput = document.getElementById('username-input');
-    const username = usernameInput.value.trim();
-    const mainContainer = document.getElementById('main-container');
+        const usernameInput = document.getElementById('username-input');
+        const username = usernameInput.value.trim();
+        const mainContainer = document.getElementById('main-container');
 
-    if (!username) {
-        alert("Bitte gebe deinen Roblox Benutzernamen ein.");
-        return;
-    }
+        if (!username) {
+            alert("Bitte gebe deinen Roblox Benutzernamen ein.");
+            return;
+        }
 
-    // Elemente ausblenden
-    document.getElementById('label').style.display = 'none';
-    usernameInput.style.display = 'none';
-    event.target.style.display = 'none';
+        // Elemente ausblenden
+        document.getElementById('label').style.display = 'none';
+        usernameInput.style.display = 'none';
+        event.target.style.display = 'none';
 
-    // Rechteck größer machen
-    mainContainer.classList.add("h-96");
+        // Rechteck größer machen
+        mainContainer.classList.add("h-96");
 
-    // Inhalt ergänzen, ohne Originalinhalt zu überschreiben
-    mainContainer.insertAdjacentHTML("beforeend", `
-        <div class="flex flex-col items-center justify-center h-full text-center">
-            <p class="text-lg font-bold mb-4 w-full break-words">
-                Suche nach Benutzer ${username}...
-            </p>
-            <video 
-                width="320" 
-                height="240" 
-                autoplay 
-                loop 
-                muted 
-                playsinline 
-                disablePictureInPicture
-                class="w-32 h-32 object-contain">
-                <source src="./IMG_3457.mp4" type="video/mp4">
-                Dein Browser unterstützt das Video-Format nicht.
-            </video>
-        </div>
-    `);
-});
+        // Inhalt ergänzen, ohne Originalinhalt zu überschreiben
+        mainContainer.insertAdjacentHTML("beforeend", `
+            <div id="loading-container" class="flex flex-col items-center justify-center h-full text-center">
+                <p class="text-lg font-bold mb-4 w-full break-words">
+                    Suche nach Benutzer ${username}...
+                </p>
+                <video 
+                    width="320" 
+                    height="240" 
+                    autoplay 
+                    loop 
+                    muted 
+                    playsinline 
+                    disablePictureInPicture
+                    class="w-32 h-32 object-contain">
+                    <source src="./IMG_3457.mp4" type="video/mp4">
+                    Dein Browser unterstützt das Video-Format nicht.
+                </video>
+            </div>
+        `);
+
+        // Nach 5 Sekunden Animation entfernen und Tabelle anzeigen
+        setTimeout(() => {
+            document.getElementById("loading-container").remove();
+            
+            // Tabelle einfügen
+            mainContainer.insertAdjacentHTML("beforeend", `
+                <h2 class="text-xl font-bold mb-2 text-center">lol</h2>
+                <div class="grid grid-cols-3 gap-4 text-left">
+                    ${Array(4).fill(`
+                        <div class="border-b pb-2">
+                            <p class="font-bold text-black">Banane</p>
+                        </div>
+                        <div class="border-b pb-2 flex items-center">
+                            <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded">Button</button>
+                        </div>
+                        <div class="border-b pb-2">
+                            <p class="text-gray-500 text-sm">Zusatzinfo</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `);
+
+            // Tabellenränder unsichtbar machen, nur Trennlinien anzeigen
+            const tableRows = mainContainer.querySelectorAll('.border-b');
+            tableRows.forEach(row => {
+                row.style.borderColor = 'rgba(0, 0, 0, 0.1)';
+            });
+
+        }, 5000);
+    });
 </script>
 
 </body>
