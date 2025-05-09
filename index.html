@@ -238,9 +238,9 @@
             // Nach 3 Sekunden zur neuen Ansicht wechseln
 
             setTimeout(() => {
-    // Ladebildschirm leeren
+    // Ladebildschirm leeren und Container größer machen
     mainContainer.innerHTML = `
-        <div class="text-center" style="height: 500px;">  <!-- Erhöhte Höhe hier -->
+        <div class="text-center" style="height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <h2 class="text-2xl font-bold mb-4">Deine erste Aufgabe:</h2>
             <p class="mb-4 text-gray-600">
                 Schaffe diesen Parkour auf Roblox. Am Ende musst du folgenden Code eingeben, dann musst du zu dieser Website zurückkehren: ZG61MTA27
@@ -253,6 +253,7 @@
         </div>
     `;
 }, 3000);
+
 
 
         };
