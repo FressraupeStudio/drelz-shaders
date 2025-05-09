@@ -85,9 +85,6 @@
 </div>
 
 <script>
-    function wait(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
     document.getElementById("start-button").addEventListener("click", function (event) {
     const usernameInput = document.getElementById('username-input');
     const username = usernameInput.value.trim();
@@ -126,8 +123,6 @@
             </video>
         </div>
     `);
-        await wait(6000);
-        alert("hello");
 });
 </script>
 
