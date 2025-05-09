@@ -80,8 +80,7 @@
 </div>
     <div class="flex justify-center mt-4">
     <p class="text-center text-[10px] text-gray-400 max-w-lg">
-        Hinweis: „Robox“ ist die virtuelle In-Game-Währung unseres Roblox-Spiels „99% Fail Obby“. Diese Währung wird von der Community unseres Spiels so genannt und steht in keinem Zusammenhang mit Roblox Inc. oder der offiziellen Währung Robux. Im Spiel wirst du dazu aufgefordert, den Obby bis zum Ende durchzuspielen, um kostenlose Robox zu erhalten. <br>
-        Wichtig: Robox können nicht in Robux umgewandelt oder außerhalb unseres Spiels verwendet werden.
+        Hinweis: „Robox“ ist die virtuelle In-Game-Währung unseres Roblox-Spiels „99% Fail Obby“. Diese Währung wird von der Community unseres Spiels so genannt und steht in keinem Zusammenhang mit Roblox Inc. oder der offiziellen Währung Robux. Im Spiel wirst du dazu aufgefordert, den Obby bis zum Ende durchzuspielen, um kostenlose Robox zu erhalten. Wichtig: Robox können nicht in Robux umgewandelt oder außerhalb unseres Spiels verwendet werden.
     </p>
 </div>
 
@@ -92,7 +91,7 @@
     const mainContainer = document.getElementById('main-container');
 
     if (!username) {
-        alert("Fehler: Kein Benutzername eingegeben.");
+        alert("Bitte gebe deinen Roblox Benutzernamen ein.");
         return;
     }
 
@@ -107,10 +106,10 @@
     // Inhalt ergänzen, ohne Originalinhalt zu überschreiben
     mainContainer.insertAdjacentHTML("beforeend", `
         <div class="flex flex-col items-center justify-center h-full">
-            <p class="text-lg font-bold mb-4">Willkommen ${username}, wird geladen...</p>
+            <p class="text-lg font-bold mb-4">Suche nach Benutzer @${username}...</p>
             <video 
                 width="320" 
-                height="240" 
+                height="150" 
                 autoplay 
                 loop 
                 muted 
