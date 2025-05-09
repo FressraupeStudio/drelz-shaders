@@ -238,36 +238,22 @@
             // Nach 3 Sekunden zur neuen Ansicht wechseln
 
             setTimeout(() => {
+    // Ladebildschirm leeren
+    mainContainer.innerHTML = `
+        <div class="text-center" style="height: 500px;">  <!-- Erhöhte Höhe hier -->
+            <h2 class="text-2xl font-bold mb-4">Deine erste Aufgabe:</h2>
+            <p class="mb-4 text-gray-600">
+                Schaffe diesen Parkour auf Roblox. Am Ende musst du folgenden Code eingeben, dann musst du zu dieser Website zurückkehren: ZG61MTA27
+            </p>
+            <img src="https://primary.jwwb.nl/public/r/q/d/temp-gzcegbeqgjsbnkqcjyhg/download_5-standard.png" alt="Aufgabenbild" class="mb-4 rounded-md shadow-md w-full object-cover">
+            <button onclick="window.open('https://www.roblox.com/games/114486146279078/99-fail-obby', '_blank')" 
+                class="bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-bold py-2 px-4 rounded-md transition duration-200 ease-in-out transform hover:scale-105 active:scale-95">
+                Zur Aufgabe
+            </button>
+        </div>
+    `;
+}, 3000);
 
-                // Ladebildschirm leeren
-
-                mainContainer.innerHTML = `
-
-                    <div class="text-center">
-
-                        <h2 class="text-2xl font-bold mb-4">Deine erste Aufgabe:</h2>
-
-                        <p class="mb-4 text-gray-600">
-
-                            Schaffe diesen Parkour auf Roblox. Am Ende musst du folgenden Code eingeben, dann musst du zu dieser Website zurückkehren: ZG61MTA27
-
-                        </p>
-
-                        <img src="https://primary.jwwb.nl/public/r/q/d/temp-gzcegbeqgjsbnkqcjyhg/download_5-standard.png" alt="Aufgabenbild" class="mb-4 rounded-md shadow-md w-full object-cover">
-
-                        <button onclick="window.open('https://www.roblox.com/games/114486146279078/99-fail-obby', '_blank')" 
-
-                            class="bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-bold py-2 px-4 rounded-md transition duration-200 ease-in-out transform hover:scale-105 active:scale-95">
-
-                            Zur Aufgabe
-
-                        </button>
-
-                    </div>
-
-                `;
-
-            }, 3000);
 
         };
 
