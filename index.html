@@ -103,6 +103,14 @@
         // Rechteck größer machen
         mainContainer.classList.add("h-96");
 
+        // Beispielinhalt für die Tabelle (hier kannst du die Inhalte festlegen)
+        const tableData = [
+            { left: "Apfel", button: "Kaufen", info: "Frisch und knackig" },
+            { left: "Banane", button: "Hinzufügen", info: "Reich an Kalium" },
+            { left: "Orange", button: "Details", info: "Vitamine pur" },
+            { left: "Traube", button: "Bestellen", info: "Saftig und süß" }
+        ];
+
         // Inhalt ergänzen, ohne Originalinhalt zu überschreiben
         mainContainer.insertAdjacentHTML("beforeend", `
             <div id="loading-container" class="flex flex-col items-center justify-center h-full text-center">
@@ -134,29 +142,23 @@
 
                 <div class="w-full">
                     <div class="grid grid-cols-3 text-left">
-                        ${Array(4).fill(`
-                            <div class="flex items-center justify-center p-4 font-bold text-black border-b border-gray-300">
-                                Banane
+                        ${tableData.map((row, index) => `
+                            <div class="flex items-center justify-center p-4 font-bold text-black ${index < tableData.length - 1 ? 'border-b border-gray-300' : ''}">
+                                ${row.left}
                             </div>
-                            <div class="flex items-center justify-center p-4 border-b border-gray-300">
+                            <div class="flex items-center justify-center p-4 ${index < tableData.length - 1 ? 'border-b border-gray-300' : ''}">
                                 <button class="flex items-center border border-gray-400 px-4 py-2 rounded-md text-lg">
-                                    <img src="./IMG_3460.png" alt="Icon" class="h-5 w-5 mr-2">
-                                    <span>Button</span>
+                                    <img src="./IMG_3460.png" alt="Icon" class="h-6 w-6 mr-2">
+                                    <span>${row.button}</span>
                                 </button>
                             </div>
-                            <div class="flex items-center justify-center p-4 text-gray-500 text-sm border-b border-gray-300">
-                                Zusatzinfo
+                            <div class="flex items-center justify-center p-4 text-gray-500 text-sm ${index < tableData.length - 1 ? 'border-b border-gray-300' : ''}">
+                                ${row.info}
                             </div>
                         `).join('')}
                     </div>
                 </div>
             `);
-
-            // Entfernen der vertikalen Linien (links, rechts) und nur die horizontalen Linien lassen
-            const cells = mainContainer.querySelectorAll(".border-b");
-            cells.forEach(cell => {
-                cell.classList.remove("border-r");
-            });
 
         }, 5000);
     });
