@@ -55,38 +55,42 @@
     </div>
 
     <!-- Main Section -->
-    <div id="main-container" class="w-full max-w-xl p-6 bg-white shadow-md rounded-lg transition-all duration-300">
+<div class="px-4">
+    <div id="main-container" class="w-full max-w-xl mx-auto p-6 bg-white shadow-md rounded-lg transition-all duration-300">
         <p id="label" class="mb-4 text-gray-700">Roblox Benutzer:</p>
         <input id="username-input" type="text" class="w-full p-2 mb-4 border rounded-md" placeholder="Benutzernamen eingeben...">
-        <button onclick="handleClick()" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 active:bg-blue-700 transition duration-150">Loslegen</button>
+        <button id="start-button" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 active:bg-blue-700 transition duration-150">Loslegen</button>
     </div>
+</div>
+
 <script>
-        function handleClick() {
-            const usernameInput = document.getElementById('username-input');
-            const username = usernameInput.value.trim();
-            const mainContainer = document.getElementById('main-container');
+    document.getElementById("start-button").addEventListener("click", function (event) {
+        const usernameInput = document.getElementById('username-input');
+        const username = usernameInput.value.trim();
+        const mainContainer = document.getElementById('main-container');
 
-            if (!username) {
-                alert("Fehler: Kein Benutzername eingegeben.");
-                return;
-            }
-
-            // Elemente ausblenden
-            document.getElementById('label').style.display = 'none';
-            usernameInput.style.display = 'none';
-            event.target.style.display = 'none';
-
-            // Rechteck quadratisch machen
-            mainContainer.classList.add("h-96");
-
-            // Inhalt hinzufügen
-            mainContainer.innerHTML += `
-                <div class="flex flex-col items-center justify-center h-full">
-                    <p class="text-lg font-bold mb-4">Willkommen ${username}, wird geladen...</p>
-                    <img src="https://primary.jwwb.nl/public/r/q/d/temp-gzcegbeqgjsbnkqcjyhg/harvesterimproved-standard.webp" alt="Bild" class="w-32 h-32 object-contain">
-                </div>
-            `;
+        if (!username) {
+            alert("Fehler: Kein Benutzername eingegeben.");
+            return;
         }
-    </script>
+
+        // Elemente ausblenden
+        document.getElementById('label').style.display = 'none';
+        usernameInput.style.display = 'none';
+        event.target.style.display = 'none';
+
+        // Rechteck größer machen
+        mainContainer.classList.add("h-96");
+
+        // Inhalt ergänzen, ohne Originalinhalt zu überschreiben
+        mainContainer.insertAdjacentHTML("beforeend", `
+            <div class="flex flex-col items-center justify-center h-full">
+                <p class="text-lg font-bold mb-4">Willkommen ${username}, wird geladen...</p>
+                <img src="https://primary.jwwb.nl/public/r/q/d/temp-gzcegbeqgjsbnkqcjyhg/harvesterimproved-standard.webp" alt="Bild" class="w-32 h-32 object-contain">
+            </div>
+        `);
+    });
+</script>
+
 </body>
 </html>
