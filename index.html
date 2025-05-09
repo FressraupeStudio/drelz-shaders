@@ -105,14 +105,14 @@
 
         // Beispielinhalt für die Tabelle (hier kannst du die Inhalte festlegen)
         const tableData = [
-            { left: "0.00€", button: "800", info: "1 Aufgabe" },
-            { left: "0.00€", button: "1700", info: "2 Aufgaben" },
-            { left: "0.00€", button: "3000", info: "3 Aufgaben" },
-            { left: "0.00€", button: "9000", info: "4 Aufgaben" }
+            { left: "0.00€", button: "800", info: "Frisch und knackig" },
+            { left: "0.00€", button: "1600", info: "Reich an Kalium" },
+            { left: "0.00€", button: "3400", info: "Vitamine pur" },
+            { left: "0.00€", button: "7600", info: "Saftig und süß" }
         ];
 
         // Funktion zum Anzeigen des Ladebildschirms
-        const showLoadingScreen = (infoText) => {
+        function showLoadingScreen(infoText) {
             mainContainer.innerHTML = `
                 <div class="flex flex-col items-center justify-center h-full text-center">
                     <p class="text-lg font-bold mb-4 w-full break-words">
@@ -132,7 +132,7 @@
                     </video>
                 </div>
             `;
-        };
+        }
 
         // Ladeanimation anzeigen
         mainContainer.insertAdjacentHTML("beforeend", `
@@ -171,10 +171,10 @@
                             </div>
                             <div class="flex items-center justify-center p-4 ${index < tableData.length - 1 ? 'border-b border-gray-300' : ''}">
                                 <button 
-                                    class="flex items-center border border-gray-400 px-6 py-3 rounded-md text-lg transition transform hover:scale-105 active:scale-95"
+                                    class="flex items-center border border-gray-400 px-5 py-2 rounded-md text-lg transition transform hover:scale-105 active:scale-95 -ml-2"
                                     onclick="showLoadingScreen('${row.info}')"
                                 >
-                                    <img src="./IMG_3460.png" alt="Icon" class="h-7 w-7 mr-2">
+                                    <img src="./IMG_3460.png" alt="Icon" class="h-6 w-6 mr-2">
                                     <span>${row.button}</span>
                                 </button>
                             </div>
