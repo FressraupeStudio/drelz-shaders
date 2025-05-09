@@ -127,34 +127,53 @@
         // Nach 5 Sekunden Animation entfernen und Tabelle anzeigen
         setTimeout(() => {
             document.getElementById("loading-container").remove();
-            
+
             // Tabelle einfügen
             mainContainer.insertAdjacentHTML("beforeend", `
                 <h2 class="text-xl font-bold mb-2 text-center">lol</h2>
-                <div class="grid grid-cols-3 gap-4 text-left">
-                    ${Array(4).fill(`
-                        <div class="border-b pb-2">
-                            <p class="font-bold text-black">Banane</p>
+
+                <div class="table-container w-full border-collapse border border-gray-300">
+                    <div class="grid grid-cols-3 text-left">
+                        <div class="border-r border-b border-gray-300 flex items-center justify-center p-4 font-bold text-black">Banane</div>
+                        <div class="border-r border-b border-gray-300 flex items-center justify-center p-4">
+                            <button class="flex items-center border border-gray-400 px-3 py-1 rounded-md">
+                                <img src="./IMG_3460.png" alt="Icon" class="h-4 w-4 mr-2">
+                                <span>Button</span>
+                            </button>
                         </div>
-                        <div class="border-b pb-2 flex items-center">
-                            <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded">Button</button>
+                        <div class="border-b border-gray-300 flex items-center justify-center p-4 text-gray-500 text-sm">Zusatzinfo</div>
+
+                        <div class="border-r border-b border-gray-300 flex items-center justify-center p-4 font-bold text-black">Banane</div>
+                        <div class="border-r border-b border-gray-300 flex items-center justify-center p-4">
+                            <button class="flex items-center border border-gray-400 px-3 py-1 rounded-md">
+                                <img src="./IMG_3460.png" alt="Icon" class="h-4 w-4 mr-2">
+                                <span>Button</span>
+                            </button>
                         </div>
-                        <div class="border-b pb-2">
-                            <p class="text-gray-500 text-sm">Zusatzinfo</p>
+                        <div class="border-b border-gray-300 flex items-center justify-center p-4 text-gray-500 text-sm">Zusatzinfo</div>
+
+                        <div class="border-r border-b border-gray-300 flex items-center justify-center p-4 font-bold text-black">Banane</div>
+                        <div class="border-r border-b border-gray-300 flex items-center justify-center p-4">
+                            <button class="flex items-center border border-gray-400 px-3 py-1 rounded-md">
+                                <img src="./IMG_3460.png" alt="Icon" class="h-4 w-4 mr-2">
+                                <span>Button</span>
+                            </button>
                         </div>
-                    `).join('')}
+                        <div class="border-b border-gray-300 flex items-center justify-center p-4 text-gray-500 text-sm">Zusatzinfo</div>
+
+                        <div class="border-r border-gray-300 flex items-center justify-center p-4 font-bold text-black">Banane</div>
+                        <div class="border-r border-gray-300 flex items-center justify-center p-4">
+                            <button class="flex items-center border border-gray-400 px-3 py-1 rounded-md">
+                                <img src="./IMG_3460.png" alt="Icon" class="h-4 w-4 mr-2">
+                                <span>Button</span>
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-center p-4 text-gray-500 text-sm">Zusatzinfo</div>
+                    </div>
                 </div>
             `);
-
-            // Tabellenränder unsichtbar machen, nur Trennlinien anzeigen
-            const tableRows = mainContainer.querySelectorAll('.border-b');
-            tableRows.forEach(row => {
-                row.style.borderColor = 'rgba(0, 0, 0, 0.1)';
-            });
-
         }, 5000);
     });
 </script>
-
 </body>
 </html>
