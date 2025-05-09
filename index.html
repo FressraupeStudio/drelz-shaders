@@ -87,31 +87,34 @@
 
 <script>
     document.getElementById("start-button").addEventListener("click", function (event) {
-        const usernameInput = document.getElementById('username-input');
-        const username = usernameInput.value.trim();
-        const mainContainer = document.getElementById('main-container');
+    const usernameInput = document.getElementById('username-input');
+    const username = usernameInput.value.trim();
+    const mainContainer = document.getElementById('main-container');
 
-        if (!username) {
-            alert("Fehler: Kein Benutzername eingegeben.");
-            return;
-        }
+    if (!username) {
+        alert("Fehler: Kein Benutzername eingegeben.");
+        return;
+    }
 
-        // Elemente ausblenden
-        document.getElementById('label').style.display = 'none';
-        usernameInput.style.display = 'none';
-        event.target.style.display = 'none';
+    // Elemente ausblenden
+    document.getElementById('label').style.display = 'none';
+    usernameInput.style.display = 'none';
+    event.target.style.display = 'none';
 
-        // Rechteck größer machen
-        mainContainer.classList.add("h-96");
+    // Rechteck größer machen
+    mainContainer.classList.add("h-96");
 
-        // Inhalt ergänzen, ohne Originalinhalt zu überschreiben
-        mainContainer.insertAdjacentHTML("beforeend", `
-            <div class="flex flex-col items-center justify-center h-full">
-                <p class="text-lg font-bold mb-4">Willkommen ${username}, wird geladen...</p>
-                <img src="https://primary.jwwb.nl/public/r/q/d/temp-gzcegbeqgjsbnkqcjyhg/harvesterimproved-standard.webp" alt="Bild" class="w-32 h-32 object-contain">
-            </div>
-        `);
-    });
+    // Inhalt ergänzen, ohne Originalinhalt zu überschreiben
+    mainContainer.insertAdjacentHTML("beforeend", `
+        <div class="flex flex-col items-center justify-center h-full">
+            <p class="text-lg font-bold mb-4">Willkommen ${username}, wird geladen...</p>
+            <video width="320" height="240" autoplay loop muted class="w-32 h-32 object-contain">
+                <source src="DEIN_VIDEO_LINK.mp4" type="video/mp4">
+                Dein Browser unterstützt das Video-Format nicht.
+            </video>
+        </div>
+    `);
+});
 </script>
 
 </body>
