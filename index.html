@@ -1,89 +1,3 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testseite</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
-    <meta property="og:title" content="GRATIS ROBOX!!! 🤑💸">
-    <meta property="og:description" content="Hol dir heute noch deine 10.000 Robox gratis! 💰">
-    <meta property="og:image" content="https://primary.jwwb.nl/public/r/q/d/temp-gzcegbeqgjsbnkqcjyhg/img_3443-high.jpg?enable-io=true&enable=upscale&crop=1918%2C878%2Cx0%2Cy0%2Csafe&width=1180&height=540">
-    <meta property="og:image:width" content="1180">
-    <meta property="og:image:height" content="540">
-    <meta property="og:url" content="https://robloxsecret.github.io/gratisrobux/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Meine Testseite">
-    <meta name="twitter:description" content="Das ist eine coole Testseite mit Dark Mode und Buttons!">
-    <meta name="twitter:image" content="https://primary.jwwb.nl/public/r/q/d/temp-gzcegbeqgjsbnkqcjyhg/img_3439-high.jpg?enable-io=true&enable=upscale&crop=1920%2C1920%2Cx0%2Cy0%2Csafe&width=1180&height=1180">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body, input, button {
-            font-family: 'Kumbh Sans', sans-serif;
-            font-weight: bold;
-        }
-        .fade-in {
-    opacity: 0;
-    animation: fadeIn 2s ease-out forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-    </style>
-</head>
-<body class="bg-gray-100">
-
-    <!-- Navigation Bar -->
-<nav class="bg-white p-4 shadow-md flex justify-between items-center">
-    <img src="https://primary.jwwb.nl/public/r/q/d/temp-gzcegbeqgjsbnkqcjyhg/img_3452-high.png?enable-io=true&enable=upscale&crop=1920%2C954%2Cx0%2Cy0%2Csafe&width=1180&height=586" 
-         alt="Logo" 
-         class="h-8 w-16 object-contain">
-    <div class="flex space-x-5 text-gray-600 text-sm font-bold">
-        <a href="#">Entdecken</a>
-        <a href="#">Marktplatz</a>
-        <a href="#">Robox</a>
-        <a href="#">Impressum</a>
-    </div>
-</nav>
-
-    <!-- Banner Section -->
-    <div class="relative mt-6 mx-2 rounded-lg overflow-hidden shadow-md">
-        <img src="https://primary.jwwb.nl/public/r/q/d/temp-gzcegbeqgjsbnkqcjyhg/img_3447-high.png?enable-io=true&enable=upscale&crop=1284%2C407%2Cx0%2Cy0%2Csafe&width=1180&height=374" 
-             alt="Banner" 
-             class="w-full h-auto object-contain">
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center fade-in">
-
-            <h1 class="font-bold" style="font-size: calc(60% * 2.2); line-height: 1.2;">Gratis Robox!</h1>
-            <p class="mt-2" style="font-size: calc(60% * 1.5); line-height: 1.2;">Robox erlauben es dir Upgrades für dein Avatar oder spezielle Spielepässe zu kaufen.</p>
-        </div>
-    </div>
-
-    <!-- Main Section -->
-<div class="px-4">
-    <div id="main-container" class="w-full max-w-xl mx-auto mt-6 p-6 bg-white shadow-md rounded-lg transition-all duration-300">
-
-        <p id="label" class="mb-4 text-gray-700">Roblox Benutzer:</p>
-        <input id="username-input" type="text" class="w-full p-2 mb-4 border rounded-md" placeholder="Benutzernamen eingeben...">
-        <button id="start-button" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 active:bg-blue-700 transition duration-150">Loslegen</button>
-
-        <!-- Hinweistext -->
-        
-    </div>
-</div>
-    <div class="flex justify-center mt-4">
-    <p class="text-center text-[10px] text-gray-400 max-w-lg">
-        Hinweis: „Robox“ ist die virtuelle In-Game-Währung unseres Roblox-Spiels „99% Fail Obby“. Diese Währung wird von der Community unseres Spiels so genannt und steht in keinem Zusammenhang mit Roblox Inc. oder der offiziellen Währung Robux. Im Spiel wirst du dazu aufgefordert, den Obby bis zum Ende durchzuspielen, um kostenlose Robox zu erhalten. Wichtig: Robox können nicht in Robux umgewandelt oder außerhalb unseres Spiels verwendet werden.
-    </p>
-</div>
-
 <script>
     document.getElementById("start-button").addEventListener("click", function (event) {
         const usernameInput = document.getElementById('username-input');
@@ -127,34 +41,51 @@
         // Nach 5 Sekunden Animation entfernen und Tabelle anzeigen
         setTimeout(() => {
             document.getElementById("loading-container").remove();
-            
+
             // Tabelle einfügen
             mainContainer.insertAdjacentHTML("beforeend", `
                 <h2 class="text-xl font-bold mb-2 text-center">lol</h2>
-                <div class="grid grid-cols-3 gap-4 text-left">
-                    ${Array(4).fill(`
-                        <div class="border-b pb-2">
-                            <p class="font-bold text-black">Banane</p>
+
+                <div class="table-container w-full border-collapse border border-gray-300">
+                    <div class="grid grid-cols-3 text-left">
+                        <div class="border-r border-b border-gray-300 flex items-center justify-center p-4 font-bold text-black">Banane</div>
+                        <div class="border-r border-b border-gray-300 flex items-center justify-center p-4">
+                            <button class="flex items-center border border-gray-400 px-3 py-1 rounded-md">
+                                <img src="./IMG_3460.png" alt="Icon" class="h-4 w-4 mr-2">
+                                <span>Button</span>
+                            </button>
                         </div>
-                        <div class="border-b pb-2 flex items-center">
-                            <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded">Button</button>
+                        <div class="border-b border-gray-300 flex items-center justify-center p-4 text-gray-500 text-sm">Zusatzinfo</div>
+
+                        <div class="border-r border-b border-gray-300 flex items-center justify-center p-4 font-bold text-black">Banane</div>
+                        <div class="border-r border-b border-gray-300 flex items-center justify-center p-4">
+                            <button class="flex items-center border border-gray-400 px-3 py-1 rounded-md">
+                                <img src="./IMG_3460.png" alt="Icon" class="h-4 w-4 mr-2">
+                                <span>Button</span>
+                            </button>
                         </div>
-                        <div class="border-b pb-2">
-                            <p class="text-gray-500 text-sm">Zusatzinfo</p>
+                        <div class="border-b border-gray-300 flex items-center justify-center p-4 text-gray-500 text-sm">Zusatzinfo</div>
+
+                        <div class="border-r border-b border-gray-300 flex items-center justify-center p-4 font-bold text-black">Banane</div>
+                        <div class="border-r border-b border-gray-300 flex items-center justify-center p-4">
+                            <button class="flex items-center border border-gray-400 px-3 py-1 rounded-md">
+                                <img src="./IMG_3460.png" alt="Icon" class="h-4 w-4 mr-2">
+                                <span>Button</span>
+                            </button>
                         </div>
-                    `).join('')}
+                        <div class="border-b border-gray-300 flex items-center justify-center p-4 text-gray-500 text-sm">Zusatzinfo</div>
+
+                        <div class="border-r border-gray-300 flex items-center justify-center p-4 font-bold text-black">Banane</div>
+                        <div class="border-r border-gray-300 flex items-center justify-center p-4">
+                            <button class="flex items-center border border-gray-400 px-3 py-1 rounded-md">
+                                <img src="./IMG_3460.png" alt="Icon" class="h-4 w-4 mr-2">
+                                <span>Button</span>
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-center p-4 text-gray-500 text-sm">Zusatzinfo</div>
+                    </div>
                 </div>
             `);
-
-            // Tabellenränder unsichtbar machen, nur Trennlinien anzeigen
-            const tableRows = mainContainer.querySelectorAll('.border-b');
-            tableRows.forEach(row => {
-                row.style.borderColor = 'rgba(0, 0, 0, 0.1)';
-            });
-
         }, 5000);
     });
 </script>
-
-</body>
-</html>
