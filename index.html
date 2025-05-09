@@ -105,13 +105,36 @@
 
         // Beispielinhalt für die Tabelle (hier kannst du die Inhalte festlegen)
         const tableData = [
-            { left: "0.00€", button: "800   ", info: "1 Aufgabe" },
-            { left: "0.00€", button: "1700   ", info: "2 Aufgaben" },
-            { left: "0.00€", button: "3000   ", info: "3 Aufgaben" },
-            { left: "0.00€", button: "8000   ", info: "4 Aufgaben" }
+            { left: "0.00€", button: "800", info: "1 Aufgabe" },
+            { left: "0.00€", button: "1700", info: "2 Aufgaben" },
+            { left: "0.00€", button: "3000", info: "3 Aufgaben" },
+            { left: "0.00€", button: "9000", info: "4 Aufgaben" }
         ];
 
-        // Inhalt ergänzen, ohne Originalinhalt zu überschreiben
+        // Funktion zum Anzeigen des Ladebildschirms
+        const showLoadingScreen = (infoText) => {
+            mainContainer.innerHTML = `
+                <div class="flex flex-col items-center justify-center h-full text-center">
+                    <p class="text-lg font-bold mb-4 w-full break-words">
+                        ${infoText}...
+                    </p>
+                    <video 
+                        width="320" 
+                        height="240" 
+                        autoplay 
+                        loop 
+                        muted 
+                        playsinline 
+                        disablePictureInPicture
+                        class="w-32 h-32 object-contain">
+                        <source src="./IMG_3457.mp4" type="video/mp4">
+                        Dein Browser unterstützt das Video-Format nicht.
+                    </video>
+                </div>
+            `;
+        };
+
+        // Ladeanimation anzeigen
         mainContainer.insertAdjacentHTML("beforeend", `
             <div id="loading-container" class="flex flex-col items-center justify-center h-full text-center">
                 <p class="text-lg font-bold mb-4 w-full break-words">
@@ -138,7 +161,7 @@
 
             // Tabelle einfügen
             mainContainer.insertAdjacentHTML("beforeend", `
-                <h2 class="text-xl font-bold mb-2 text-center">lol</h2>
+                <h2 class="text-lg font-semibold mb-2 text-center text-gray-500">lol</h2>
 
                 <div class="w-full">
                     <div class="grid grid-cols-3 text-left">
@@ -147,8 +170,11 @@
                                 ${row.left}
                             </div>
                             <div class="flex items-center justify-center p-4 ${index < tableData.length - 1 ? 'border-b border-gray-300' : ''}">
-                                <button class="flex items-center border border-gray-400 px-4 py-2 rounded-md text-lg">
-                                    <img src="./IMG_3460.png" alt="Icon" class="h-6 w-6 mr-2">
+                                <button 
+                                    class="flex items-center border border-gray-400 px-6 py-3 rounded-md text-lg transition transform hover:scale-105 active:scale-95"
+                                    onclick="showLoadingScreen('${row.info}')"
+                                >
+                                    <img src="./IMG_3460.png" alt="Icon" class="h-7 w-7 mr-2">
                                     <span>${row.button}</span>
                                 </button>
                             </div>
@@ -159,7 +185,6 @@
                     </div>
                 </div>
             `);
-
         }, 5000);
     });
 </script>
