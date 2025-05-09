@@ -99,11 +99,8 @@
         document.getElementById('label').style.display = 'none';
         usernameInput.style.display = 'none';
         event.target.style.display = 'none';
-
-        // Rechteck größer machen
         mainContainer.classList.add("h-96");
 
-        // Beispielinhalt für die Tabelle (hier kannst du die Inhalte festlegen)
         const tableData = [
             { left: "0.00€", button: "800", info: "1 Aufgabe", tasks: 1 },
             { left: "0.00€", button: "1700", info: "2 Aufgaben", tasks: 2 },
@@ -113,11 +110,10 @@
 
         // Funktion zum Anzeigen des Ladebildschirms
         window.showLoadingScreen = function(infoText, taskCount) {
-            // Inhalt der Tabelle entfernen und Ladebildschirm anzeigen
             mainContainer.innerHTML = `
                 <div class="flex flex-col items-center justify-center h-full text-center">
                     <p class="text-lg font-bold mb-4 w-full break-words">
-                        Deine erste Aufgabe wird ausgelost...
+                        Deine erste von ${taskCount} Aufgabe wird ausgelost...
                     </p>
                     <video 
                         width="320" 
@@ -133,6 +129,24 @@
                     </video>
                 </div>
             `;
+
+            // Nach 3 Sekunden zur neuen Ansicht wechseln
+            setTimeout(() => {
+                // Ladebildschirm leeren
+                mainContainer.innerHTML = `
+                    <div class="text-center">
+                        <h2 class="text-2xl font-bold mb-4">Deine Aufgabe wartet auf dich!</h2>
+                        <p class="mb-4 text-gray-600">
+                            Klicke auf den Button, um deine Aufgabe zu starten.
+                        </p>
+                        <img src="https://via.placeholder.com/600x300.png" alt="Aufgabenbild" class="mb-4 rounded-md shadow-md w-full object-cover">
+                        <button onclick="window.open('https://example.com', '_blank')" 
+                            class="bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-bold py-2 px-4 rounded-md transition duration-200 ease-in-out transform hover:scale-105 active:scale-95">
+                            Zur Aufgabe
+                        </button>
+                    </div>
+                `;
+            }, 3000);
         };
 
         // Ladeanimation anzeigen
@@ -160,10 +174,8 @@
         setTimeout(() => {
             document.getElementById("loading-container").remove();
 
-            // Tabelle einfügen
             mainContainer.insertAdjacentHTML("beforeend", `
                 <h2 class="text-lg font-semibold mb-2 text-center text-gray-500">lol</h2>
-
                 <div class="w-full">
                     <div class="grid grid-cols-3 text-left">
                         ${tableData.map((row, index) => `
@@ -182,7 +194,6 @@
                             <div class="flex items-center justify-center p-4 text-gray-500 text-sm ${index < tableData.length - 1 ? 'border-b border-gray-300' : ''}">
                                 ${row.info}
                             </div>
-                            
                         `).join('')}
                     </div>
                 </div>
